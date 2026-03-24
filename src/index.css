@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Satisfy&family=Tangerine:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Delius", cursive  !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "Delius", cursive;
+}
+caption{
+  font-size: 4px;
+  font-style: italic;
+}
