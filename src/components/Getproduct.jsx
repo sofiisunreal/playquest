@@ -18,7 +18,7 @@ const Getproducts=()=>{
             setProducts(response.data)
             setLoading("")
         } catch (error) {
-            
+            setError(error.message)
         }
     }
 

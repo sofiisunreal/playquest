@@ -18,7 +18,7 @@ const Mpesapayment=()=>{
         setLoading("Loading...")
 
         // create digital envelope
-        const formdata=new FormData
+        const formdata=new FormData()
 
         // append
         formdata.append("phone", phone)

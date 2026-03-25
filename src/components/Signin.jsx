@@ -7,8 +7,9 @@ const Signin=()=>{
     const [email,setEmail]=useState("")
     const[password,setPassword]=useState("")
 
+    // eslint-disable-next-line
     {/* 3 states of posting data  */}
-    const [loading,setLoading]=useState("")
+    const[loading,setLoading]=useState("")
     const[error,setError]=useState("")
     const[success,setSuccess]=useState("")
 
@@ -43,6 +44,8 @@ const Signin=()=>{
 
 
         } catch (error) {
+            setError(error.message)
+            setLoading("")
             
         }
     }

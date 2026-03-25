@@ -1,5 +1,5 @@
 import axios from "axios"
-import React ,{use, useState} from "react"
+import React ,{ useState} from "react"
 
 const Addproduct=()=>{
     // declare the states here 
@@ -34,6 +34,8 @@ const Addproduct=()=>{
             setLoading("")
 
         } catch (error) {
+            setError(error.message)
+            setLoading("")
             
         }
     }

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -7,7 +6,6 @@ import Signin from './components/Signin';
 import Addproduct from './components/Addproduct';
 import Getproduct from './components/Getproduct';
 import Mpesapayment from './components/Mpesapayment';
-import Test from './components/Test';
 import { BrowserRouter,Link, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 
@@ -19,7 +17,7 @@ function App() {
       <Navbar/>
       <header className="App-header">
         <h1>
-        <marquee behavior="" direction="right">🪄Welcome to PlayQuest Arena🪄</marquee>
+        🪄Welcome to PlayQuest Arena🪄
         </h1>
         <p style={{fontSize:"14px", fontStyle:"italic"}}> ~Where every console unlocks epic adventures! </p>
       </header>

@@ -6,9 +6,13 @@ const Navbar = () => {
             <div class="col-md-12">
                 {/* <!-- a nav with navbar content --> */}
                 <nav class="navbar navbar-expand-md ">
-                    <a href="" class="navbar-brand text-danger">PlayQuest Arena
+                    <header>
+
+                     <p class="navbar-brand text-danger">PlayQuest Arena
                         <img src="images/gameconsole.png" alt="" width={50}  />
-                    </a>
+                    </p>
+                    </header>
+                
                     <button class="navbar-toggler" data-bs-target="#navbarcollapse" data-bs-toggle="collapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
