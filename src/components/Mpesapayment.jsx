@@ -4,7 +4,7 @@ import {useLocation} from "react-router-dom"
 
 const Mpesapayment=()=>{
     const {singleproduct}=useLocation().state||{}
-    const imagepath="http://sophiehiggs.alwaysdata.net/static/images/"
+    const imagepath="https://sophiehiggs.alwaysdata.net/static/images/"
 
     // declare your states here 
     const [phone,setPhone]=useState("")
@@ -26,7 +26,7 @@ const Mpesapayment=()=>{
 
         // try and catch 
         try {
-            const response= await axios.post("http://higgs.alwaysdata.net/api/mpesa_payment",formdata)
+            const response= await axios.post("https://higgs.alwaysdata.net/api/mpesa_payment",formdata)
             setSuccess(response.data.message)
             setLoading("")
 

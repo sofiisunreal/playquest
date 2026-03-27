@@ -2,6 +2,7 @@ import React,{useEffect, useState} from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import Carousel from "./Carousel";
+import Footer from "./Footer";
 
 const Getproducts=()=>{
      let navigate = useNavigate();
@@ -14,7 +15,7 @@ const Getproducts=()=>{
     const getproducts= async()=>{
         setLoading("Loading products..")
         try {
-            const response=await axios.get("http://sophiehiggs.alwaysdata.net/api/getproducts")
+            const response=await axios.get("https://sophiehiggs.alwaysdata.net/api/getproducts")
             setProducts(response.data)
             setLoading("")
         } catch (error) {
@@ -29,7 +30,7 @@ const Getproducts=()=>{
     
     console.log(products)
 
-    const imagepath="http://sophiehiggs.alwaysdata.net/static/images/"
+    const imagepath="https://sophiehiggs.alwaysdata.net/static/images/"
 
     return(
         <div className="row m-3">
@@ -58,6 +59,9 @@ const Getproducts=()=>{
                     </div>
                 </div>
             ))}
+
+            {/* footer goes here */}
+            <Footer></Footer>
         </div>
     )
 }

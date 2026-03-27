@@ -29,7 +29,7 @@ const Addproduct=()=>{
 
         // try and catch error 
         try {
-            const response=await axios.post("http://sophiehiggs.alwaysdata.net/api/addproduct",formdata)
+            const response=await axios.post("https://sophiehiggs.alwaysdata.net/api/addproduct",formdata)
             setSuccess(response.data.message)
             setLoading("")
 

@@ -39,8 +39,6 @@ function App() {
 
       <footer className='footer bg-dark p-3 mt-15'>
         <b className='text-white '>Developed by Sophie &copy; 2026. All rights reserved.</b>
-
-
       </footer>
     </div>
     </BrowserRouter>
