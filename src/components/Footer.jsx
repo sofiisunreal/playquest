@@ -3,11 +3,11 @@ import React from 'react'
 const Footer = () => {
   return (
     
-    <section class="row bg-warning p-3">
+    <section class="row bg-dark p-3 mt-8">
         {/* <!-- child 1 --> */}
         <div class="col-md-4 text-center text-white">
             <h2>About Us</h2>
-            <p>
+            <p className='text-start'>
                 We are one of the best selling online stores nationwide. We are mostly retail but offer wholesale.
                 To get the wholesale, please visit our offices or contact us.
             </p>
@@ -36,7 +36,7 @@ const Footer = () => {
             <a href="https://twitter.com">
                 <img src="images/x.png" alt=""/>
             </a>
-            <p>In this platforms we have employed people who will be able to attend to you 24/7.Also follow us in
+            <p className='text-white text-end'>In these platforms we have employed people who will be able to attend to you 24/7.Also follow us in
                 order not to miss out on deals!! </p>
         </div>
     </section>

@@ -1,6 +1,24 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
+
+
 
 const Navbar = () => {
+
+
+// declare states
+const [user,setUser]=useState("null")
+
+// load user from local storage 
+useEffect(()=>{
+    const loggedUser=JSON.parse(localStorage.getItem("user"));
+    setUser(loggedUser);
+},[])
+
+// logout function 
+const logout=()=>{
+    localStorage.removeItem("user");
+    setUser("null");
+}
   return (
             <section class="row">
             <div class="col-md-12">
@@ -21,8 +39,23 @@ const Navbar = () => {
                         <div class="navbar-nav ">
                             <a href="/" class="nav-link text-white">Home</a>
                             <a href="/addproduct" class="nav-link text-white" >Add Product</a>
-                            <a href="/signup" class="nav-link text-white">Sign Up</a>
-                            <a href="/signin" class="nav-link text-white">Sign In</a>
+                            {user ?(
+                                    <>
+                                    <span className='nav-link'> 
+                                        Welcome {user.name}
+                                    </span>
+                                    <button onClick={logout} className="btn btn-danger">
+                                        Logout
+                                    </button>
+                                    </>
+
+                                ):(
+                                    <>
+                                     <a href="/signup" class="nav-link text-white">SignUp</a>
+                                    <a href="/signin" class="nav-link text-white" >SignIn</a>
+                                    </>
+                                )
+                            }
 
                         </div>
                     </div>

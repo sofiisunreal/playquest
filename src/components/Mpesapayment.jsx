@@ -3,7 +3,7 @@ import { useState } from "react"
 import {useLocation} from "react-router-dom"
 
 const Mpesapayment=()=>{
-    const {singleproduct}=useLocation().state||{}
+    const {product}=useLocation().state||{}
     const imagepath="https://sophiehiggs.alwaysdata.net/static/images/"
 
     // declare your states here 
@@ -22,7 +22,7 @@ const Mpesapayment=()=>{
 
         // append
         formdata.append("phone", phone)
-        formdata.append("amount", singleproduct.product_cost)
+        formdata.append("amount", product.product_cost)
 
         // try and catch 
         try {
@@ -41,12 +41,12 @@ const Mpesapayment=()=>{
 
             <h1 className="text-success">Make Payment - Lipa na Mpesa</h1>
             <div className="col-md-6 card shadow p-4">
-            <img src={imagepath+singleproduct.product_photo} alt="" style={{height:"300px" , objectFit:"contain"}}/>
+            <img src={imagepath+product.product_photo} alt="" style={{height:"300px" , objectFit:"contain"}}/>
 
                 <div className="card-body text-start">
-                    <h1 className="text-info">{singleproduct.product_name}</h1>
-                    <p>{singleproduct.product_description}</p>
-                    <b className="text-warning">{singleproduct.product_cost}</b> <br />
+                    <h1 className="text-info">{product.product_name}</h1>
+                    <p>{product.product_description}</p>
+                    <b className="text-warning">{product.product_cost}</b> <br />
 
                     {/* bind the variable */}
                     <h2 className="text-warning">{loading}</h2>
