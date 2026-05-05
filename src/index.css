@@ -21,7 +21,8 @@ caption{
 }
 .card:hover{
   transform: scale(1.1);
-  background-color: rgb(229, 205, 238);
+  background-color: rgb(249, 241, 254);
 }
+
 
 
