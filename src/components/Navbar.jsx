@@ -41,8 +41,8 @@ const logout=()=>{
                             <a href="/addproduct" class="nav-link text-white" >Add Product</a>
                             {user ?(
                                     <>
-                                    <span className='nav-link'> 
-                                        Welcome {user.name}
+                                    <span className='nav-link text-white'> 
+                                        Welcome {user.username}
                                     </span>
                                     <button onClick={logout} className="btn btn-danger">
                                         Logout

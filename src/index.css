@@ -14,3 +14,11 @@ caption{
   font-size: 4px;
   font-style: italic;
 }
+
+.card{
+  transition: transform 0.3s;
+}
+.card:hover{
+  transform: scale(1.1);
+  background-color: rgb(229, 205, 238);
+}
