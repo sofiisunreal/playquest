@@ -29,6 +29,8 @@ function App() {
         <Link to="/" className='btn-custom'>Get product</Link>
       </nav>
       {/* routing */}
+      <div className='main-container'>
+
       <Routes>
         <Route path='/' element={<Getproduct/>}/>
         <Route path='/Signup' element={<Signup/>}/>
@@ -36,8 +38,9 @@ function App() {
         <Route path='/Addproduct' element={<Addproduct/>}/>
         <Route path='/Makepayment' element={<Mpesapayment/>}/>
       </Routes>
+      </div>
 
-      <footer className='footer bg-dark p-3 mt-15'>
+      <footer className='bottom-footer bg-dark p-3 '>
         <b className='text-white '>Developed by Sophie &copy; 2026. All rights reserved.</b>
       </footer>
     </div>

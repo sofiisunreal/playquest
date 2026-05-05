@@ -44,7 +44,7 @@ const logout=()=>{
                                     <span className='nav-link text-white'> 
                                         Welcome {user.username}
                                     </span>
-                                    <button onClick={logout} className="btn btn-danger">
+                                    <button onClick={logout} className="btn btn-danger" >
                                         Logout
                                     </button>
                                     </>

@@ -2,6 +2,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;   
 }
 
 
@@ -59,4 +60,8 @@
 .footer{
   flex-shrink:1;
   margin-top: 200px;
+}
+
+.main-container {
+  flex: 1; 
 }
