@@ -3,21 +3,22 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import Carousel from "./Carousel";
 import Footer from "./Footer";
-
-
+import { addToCart } from "../utils/cart";
 
 const Getproducts=()=>{
      let navigate = useNavigate();
-    // declare our states 
+
+    // declare our states
     const [loading,setLoading]=useState("")
     const [products,setProducts]=useState([])
     const[error,setError]=useState("")
     const[search,setSearch]=useState("")
     const[visibleCount,setVisibleCount]=useState(8)
 
+    // ✅ FIXED: per-product message tracking
+    const [addedId, setAddedId] = useState(null)
 
-
-    // define function to filter products 
+    // define function to filter products
     const filtered_products=products.filter((item)=>
         item.product_name.toLowerCase().includes(search.toLowerCase())||
         item.product_description.toLowerCase().includes(search.toLowerCase())
@@ -39,18 +40,26 @@ const Getproducts=()=>{
     useEffect(()=>{
         getproducts()
     },[])
-    
-    console.log(products)
 
     const imagepath="https://sophiehiggs.alwaysdata.net/static/images/"
+
+    // ✅ FIXED handler
+    const handleAdd = (product) => {
+        addToCart(product);
+
+        setAddedId(product.id);
+
+        setTimeout(() => {
+            setAddedId(null);
+        }, 1500);
+    };
 
     return(
         <div className="row m-3">
 
-           
-            {/* carousel goes here */}
             <Carousel/>
-             {/* search filter goes here */}
+
+            {/* search filter */}
             <div className="row justify-content-center mt-4 mb-1">
                 <input
                 className="form control w-50"
@@ -59,37 +68,54 @@ const Getproducts=()=>{
                 value={search}
                 onChange={(e)=>setSearch(e.target.value)}/>
             </div>
+
             <h1 className="text-success mt-5">AVAILABLE PRODUCTS ✨</h1>
-            {/* bind the states  */}
+
             <h2 className="text-warning">{loading}</h2>
             <h2 className="text-danger">{error}</h2>
 
-            {/* map here */}
+            {/* map */}
             {filtered_products.slice(0,visibleCount).map((product)=>(
-                
-                
-                <div className="col-md-3 mb-4">
+                <div className="col-md-3 mb-4" key={product.id}>
                     <div className="card shadow  h-100 text-start">
 
-                        {/* image goes here */}
                         <img src={imagepath+product.product_photo} alt="" style={{height:"300px" , objectFit:"cover"}}/>
+
                         <div className="card-body">
-                            <h2 className="text-secondary  ">{product.product_name}</h2>
+                            <h2 className="text-secondary">{product.product_name}</h2>
                             <p>{product.product_description}</p>
-                            <b className="text-dark">Ksh{product.product_cost}</b> <br /> <br />
-                            <button className="btn btn-secondary">Add to Cart 🛒</button> <br /> <br />
-                            <button className="btn btn-danger "  onClick={()=>navigate("/makepayment" ,{state:{product}})}>Purchase now!!</button>
-                            
+                            <b className="text-dark">Ksh{product.product_cost}</b> <br /><br />
+
+                            <button
+                                className="btn btn-secondary"
+                                onClick={() => handleAdd(product)}
+                            >
+                                Add to Cart 🛒
+                            </button>
+
+                            {/* ✅ FIXED: only shows for clicked product */}
+                            {addedId === product.id && (
+                                <p style={{ color: "green" }}>
+                                    Added to cart ✅
+                                </p>
+                            )} <br/>
+
+                            <button
+                                className="btn btn-danger mt-2"
+                                onClick={()=>navigate("/makepayment" ,{state:{product}})}
+                            >
+                                Purchase now!!
+                            </button>
+
                         </div>
                     </div>
                 </div>
-                
             ))}
 
-            {/* load more goes here */}
+            {/* load more */}
             <div className="text-center mt-3 mb-4">
                 {visibleCount<filtered_products.length && (
-                    <button 
+                    <button
                     className="btn btn-danger"
                     onClick={()=>setVisibleCount(visibleCount+8)}
                     >
@@ -98,9 +124,9 @@ const Getproducts=()=>{
                 )}
             </div>
 
-            {/* footer goes here */}
-            <Footer></Footer>
+            <Footer/>
         </div>
     )
 }
+
 export default Getproducts

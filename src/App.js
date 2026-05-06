@@ -4,10 +4,13 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 import Addproduct from './components/Addproduct';
-import Getproduct from './components/Getproduct';
 import Mpesapayment from './components/Mpesapayment';
 import { BrowserRouter,Link, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Cart from "./components/Cart";
+import Home from './components/Home';
+import Getproducts from './components/Getproduct';
+import Chatbot from "./components/Chatbot";
 
 function App() {
   return (
@@ -27,19 +30,23 @@ function App() {
         <Link to="/Signin" className='btn-custom'>Signin</Link>
         <Link to="/Addproduct" className='btn-custom'>Add Product</Link>
         <Link to="/" className='btn-custom'>Get product</Link>
+        <Link to="/cart" className='btn-custom'>View Cart</Link>
       </nav>
       {/* routing */}
       <div className='main-container'>
 
       <Routes>
-        <Route path='/' element={<Getproduct/>}/>
+        <Route path='/' element={<Getproducts/>}/>
         <Route path='/Signup' element={<Signup/>}/>
         <Route path='/Signin' element={<Signin/>}/>
         <Route path='/Addproduct' element={<Addproduct/>}/>
         <Route path='/Makepayment' element={<Mpesapayment/>}/>
+        <Route path="/cart" element={<Cart />} />
+        <Route path='/Home' element={<Home/>}/>
+         <Route path='/Chatbot' element={<Chatbot />}/>
       </Routes>
       </div>
-
+ <Chatbot />
       <footer className='bottom-footer bg-dark p-3 '>
         <b className='text-white '>Developed by Sophie &copy; 2026. All rights reserved.</b>
       </footer>

@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react'
+import { getCartCount } from "../utils/cart";
 
 
 
@@ -8,13 +9,13 @@ const Navbar = () => {
 // declare states
 const [user,setUser]=useState("null")
 
-// load user from local storage 
+// load user from local storage
 useEffect(()=>{
     const loggedUser=JSON.parse(localStorage.getItem("user"));
     setUser(loggedUser);
 },[])
 
-// logout function 
+// logout function
 const logout=()=>{
     localStorage.removeItem("user");
     setUser("null");
@@ -30,7 +31,7 @@ const logout=()=>{
                         <img src="images/gameconsole.png" alt="" width={50}  />
                     </p>
                     </header>
-                
+
                     <button class="navbar-toggler" data-bs-target="#navbarcollapse" data-bs-toggle="collapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -39,12 +40,16 @@ const logout=()=>{
                         <div class="navbar-nav ">
                             <a href="/home" class="nav-link text-white">Home</a>
                             <a href="/addproduct" class="nav-link text-white" >Add Product</a>
-                            
+                            <a href="/cart" class="nav-link text-white">Cart 🛒</a>
+                            <div className='cartcount'>
+                                Cart ({getCartCount()})
+                            </div>
+
                             <div className='logout-btn'>
 
                                 {user ?(
                                     <>
-                                        <span className='nav-link text-white'> 
+                                        <span className='nav-link text-white'>
                                             Welcome {user.username} 👤
                                         </span>
                                         <button onClick={logout} className="btn btn-danger" >
@@ -58,7 +63,9 @@ const logout=()=>{
                                         </>
                                     )
                                 }
+
                             </div>
+
                         </div>
                     </div>
                 </nav>

@@ -38,6 +38,7 @@
 }
 .navbar{
   background-color: #180142;
+
 }
 .btn-custom {
   background-color:#180142;
@@ -105,6 +106,15 @@
 
 .social-icons {
   display: flex;
-  gap: 34px; 
+  gap: 34px;
+}
+
+.navbar-nav{
+  margin-top: 25px;
+}
+
+.cartcount{
+  color: white;
+  margin-top: 10px;
 }
 
