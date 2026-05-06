@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom"
 import Carousel from "./Carousel";
 import Footer from "./Footer";
 
+
+
 const Getproducts=()=>{
      let navigate = useNavigate();
     // declare our states 
@@ -12,6 +14,7 @@ const Getproducts=()=>{
     const[error,setError]=useState("")
     const[search,setSearch]=useState("")
     const[visibleCount,setVisibleCount]=useState(8)
+
 
 
     // define function to filter products 
@@ -74,7 +77,9 @@ const Getproducts=()=>{
                             <h2 className="text-secondary  ">{product.product_name}</h2>
                             <p>{product.product_description}</p>
                             <b className="text-dark">Ksh{product.product_cost}</b> <br /> <br />
+                            <button className="btn btn-secondary">Add to Cart 🛒</button> <br /> <br />
                             <button className="btn btn-danger "  onClick={()=>navigate("/makepayment" ,{state:{product}})}>Purchase now!!</button>
+                            
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ const Footer = () => {
         {/* <!-- child 2 --> */}
         <div class="col-md-4 text-white">
             <div className="footer-section contact">
-              <h3>Contact Us</h3>
+              <h3>Contact Info</h3>
               <div className="contact-item">
                 <span>📧</span>
                 <div>
@@ -45,6 +45,14 @@ const Footer = () => {
                 <div>
                   <p>Location</p>
                   <small>Nairobi, Kenya</small>
+                </div>
+              </div>
+
+              <div className='contact-item'>
+                <span>🚚</span>
+                <div>
+                  <p>Delivery</p>
+                  <small>Packages shall be delivered via <a href="https://new.pickupmtaani.com/">pick up mtaani</a></small>
                 </div>
               </div>
             </div>

@@ -21,8 +21,11 @@ caption{
 }
 .card:hover{
   transform: scale(1.1);
-  background-color: rgb(249, 241, 254);
+  background-color: rgb(229, 217, 236);
 }
 
+.logout-btn{
 
+   margin-left: 700px;
+}
 

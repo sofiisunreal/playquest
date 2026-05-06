@@ -37,26 +37,28 @@ const logout=()=>{
                     {/* <!-- a division containing the links --> */}
                     <div class="collapse navbar-collapse" id="navbarcollapse">
                         <div class="navbar-nav ">
-                            <a href="/" class="nav-link text-white">Home</a>
+                            <a href="/home" class="nav-link text-white">Home</a>
                             <a href="/addproduct" class="nav-link text-white" >Add Product</a>
-                            {user ?(
-                                    <>
-                                    <span className='nav-link text-white'> 
-                                        Welcome {user.username}
-                                    </span>
-                                    <button onClick={logout} className="btn btn-danger" >
-                                        Logout
-                                    </button>
-                                    </>
+                            
+                            <div className='logout-btn'>
 
-                                ):(
+                                {user ?(
                                     <>
-                                     <a href="/signup" class="nav-link text-white">SignUp</a>
-                                    <a href="/signin" class="nav-link text-white" >SignIn</a>
-                                    </>
-                                )
-                            }
-
+                                        <span className='nav-link text-white'> 
+                                            Welcome {user.username} 👤
+                                        </span>
+                                        <button onClick={logout} className="btn btn-danger" >
+                                            Logout
+                                        </button>
+                                        </>
+                                        ):(
+                                        <>
+                                         <a href="/signup" class="nav-link text-white">SignUp</a>
+                                        <a href="/signin" class="nav-link text-white" >SignIn</a>
+                                        </>
+                                    )
+                                }
+                            </div>
                         </div>
                     </div>
                 </nav>
