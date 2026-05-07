@@ -5,7 +5,7 @@ import Signup from './components/Signup';
 import Signin from './components/Signin';
 import Addproduct from './components/Addproduct';
 import Mpesapayment from './components/Mpesapayment';
-import { BrowserRouter,Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Cart from "./components/Cart";
 import Home from './components/Home';
@@ -25,13 +25,13 @@ function App() {
         <p style={{fontSize:"14px", fontStyle:"italic"}}> ~Where every console unlocks epic adventures! </p>
       </header>
       {/* nav links go here */}
-      <nav>
+      {/* <nav>
         <Link to="/Signup" className='btn-custom mt-4'>Signup</Link>
         <Link to="/Signin" className='btn-custom'>Signin</Link>
         <Link to="/Addproduct" className='btn-custom'>Add Product</Link>
         <Link to="/" className='btn-custom'>Get product</Link>
         <Link to="/cart" className='btn-custom'>View Cart</Link>
-      </nav>
+      </nav> */}
       {/* routing */}
       <div className='main-container'>
 
@@ -43,7 +43,7 @@ function App() {
         <Route path='/Makepayment' element={<Mpesapayment/>}/>
         <Route path="/cart" element={<Cart />} />
         <Route path='/Home' element={<Home/>}/>
-         <Route path='/Chatbot' element={<Chatbot />}/>
+        <Route path='/Chatbot' element={<Chatbot />}/>
       </Routes>
       </div>
  <Chatbot />

@@ -39,6 +39,7 @@ const logout=()=>{
                     <div class="collapse navbar-collapse" id="navbarcollapse">
                         <div class="navbar-nav ">
                             <a href="/home" class="nav-link text-white">Home</a>
+                            <a href='/' class="nav-link text-white">View Products</a>
                             <a href="/addproduct" class="nav-link text-white" >Add Product</a>
                             <a href="/cart" class="nav-link text-white">Cart 🛒</a>
                             <div className='cartcount'>
