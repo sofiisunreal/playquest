@@ -110,8 +110,9 @@ This project helped me improve my skills in:
 
 Built by Sophie Kendi
 
-- GitHub: https://github.com/sofiiunreal
-- LinkedIn: https://linkedin.com/in/yourlinkedin
+- GitHub: https://github.com/sofiisunreal
+- LinkedIn: www.linkedin.com/in/sophie-kendi-146540324
+
 
 ---
 
